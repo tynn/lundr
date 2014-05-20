@@ -36,7 +36,7 @@ class App (object) :
 		<property name="title">L&amp;R</property>
 		<property name="resizable">False</property>
 		<property name="window_position">mouse</property>
-		<property name="icon_name">gtk-go-up</property>
+		<property name="icon_name">gtk-close</property>
 		<signal name="destroy" handler="__quit__"/>
 		<signal name="key-release-event" handler="__key_release__"/>
 		<signal name="key-press-event" handler="__key_press__"/>
