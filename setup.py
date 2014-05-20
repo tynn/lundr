@@ -16,21 +16,14 @@
 #	along with lundr. If not, see <http://www.gnu.org/licenses/>.
 
 from distutils.core import setup
-from distutils.command.install import install
-
 import sys
 sys.dont_write_bytecode = True
-
 try :
 	from importlib.machinery import SourceFileLoader
 	lundr = SourceFileLoader('lundr', 'lundr').load_module()
 except ImportError :
 	import imp
 	lundr = imp.load_source('lundr', 'lundr')
-
-for i in range(len(install.sub_commands)) :
-	if install.sub_commands[i][0] == 'install_egg_info' :
-		install.sub_commands[i] = ('install_egg_info', lambda self : False)
 
 setup(
 	name = 'lundr',
@@ -44,6 +37,5 @@ setup(
 	platforms = ['Linux'],
 	scripts = ['lundr'],
 	data_files = [('share/applications', ['lundr.desktop'])],
-	cmdclass = {'install': install},
 )
 
