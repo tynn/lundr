@@ -22,7 +22,7 @@
 
 __author__ = 'Christian Schmitz'
 __author_email__ = 'tynn.dev@gmail.com'
-__url__ = 'https://github.com/tynn/lundr-py'
+__url__ = 'https://github.com/tynn/lundr'
 __version__ = '1.0'
 
 from gi.repository import Gdk, Gst, Gtk
