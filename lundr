@@ -174,7 +174,7 @@ class App (object) :
 			elif event.keyval == Gdk.keyval_from_name("F1") :
 				about = Gtk.AboutDialog(
 					parent = window,
-					logo_icon_name = "gtk-go-up",
+					logo_icon_name = "gtk-close",
 					program_name = "L&R",
 					version = __version__,
 					website = __url__,
