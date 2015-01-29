@@ -16,6 +16,7 @@
 #	along with lundr. If not, see <http://www.gnu.org/licenses/>.
 
 from distutils.core import setup
+from distutils.command.install import install
 import sys
 sys.dont_write_bytecode = True
 try :
@@ -24,6 +25,10 @@ try :
 except ImportError :
 	import imp
 	lundr = imp.load_source('lundr', 'lundr')
+
+_noegg = lambda (key, _) :  key != 'install_egg_info'
+class install_noegg (install) :
+	sub_commands = list(filter(_noegg, install.sub_commands))
 
 setup(
 	name = 'lundr',
@@ -37,5 +42,6 @@ setup(
 	platforms = ['Linux'],
 	scripts = ['lundr'],
 	data_files = [('share/applications', ['lundr.desktop'])],
+	cmdclass = {'install': install_noegg},
 )
 
