@@ -2,6 +2,7 @@
 Name=L&R
 GenericName=Stereo Test
 Comment=Test channels of stereo
+Comment[de]=Stereokanäle testen
 Exec=lundr
 Icon=gtk-close
 Terminal=false
