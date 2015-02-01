@@ -174,12 +174,12 @@ class App (object) :
 			elif event.keyval == Gdk.keyval_from_name("F1") :
 				about = Gtk.AboutDialog(
 					parent = window,
-					logo_icon_name = "gtk-close",
 					program_name = "L&R",
 					version = __version__,
 					website = __url__,
-					copyright = "Copyright © 2014 {0}".format(__author__),
+					copyright = "Copyright © 2014 " + __author__,
 					license_type = Gtk.License.GPL_3_0,
+					logo_icon_name = None,
 				)
 				about.run()
 				about.destroy()
