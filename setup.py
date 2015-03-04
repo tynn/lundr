@@ -19,16 +19,7 @@ from distutils.core import setup
 from distutils.command.install import install
 import sys
 sys.dont_write_bytecode = True
-try :
-	from importlib.machinery import SourceFileLoader
-	lundr = SourceFileLoader('lundr', 'lundr').load_module()
-except ImportError :
-	import imp
-	lundr = imp.load_source('lundr', 'lundr')
-
-_noegg = lambda (key, _) :  key != 'install_egg_info'
-class install_noegg (install) :
-	sub_commands = list(filter(_noegg, install.sub_commands))
+import lundr
 
 setup(
 	name = 'lundr',
@@ -40,8 +31,8 @@ setup(
 	long_description = lundr.__doc__,
 	url = lundr.__url__,
 	platforms = ['Linux'],
+	py_modules = ['lundr'],
 	scripts = ['lundr'],
 	data_files = [('share/applications', ['lundr.desktop'])],
-	cmdclass = {'install': install_noegg},
 )
 
